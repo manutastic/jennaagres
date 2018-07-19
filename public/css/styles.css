@@ -1,0 +1,141 @@
+*, *:before, *:after {
+  font-family: "Karla", "Myriad Pro", Myriad, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box; }
+
+body {
+  padding: 0 10px; }
+
+.container {
+  max-width: 720px;
+  margin: 70px auto;
+  padding: 0; }
+  .container > img {
+    width: 100%; }
+
+header {
+  border-bottom: 2px solid #ced900;
+  overflow: hidden;
+  padding: 25px 0;
+  margin-bottom: 40px; }
+  header h1 {
+    float: left;
+    margin: 0; }
+    header h1 a {
+      font-size: .6em;
+      color: #ced900;
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+  header nav {
+    float: right; }
+    header nav ul {
+      list-style: none;
+      margin: 0; }
+      header nav ul li {
+        display: inline-block;
+        margin: 0 5px;
+        font-size: .9em;
+        font-weight: bold; }
+        header nav ul li a {
+          text-decoration: none;
+          color: #222; }
+          header nav ul li a:visited {
+            color: #222; }
+
+.projects {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  max-width: 700px; }
+  .projects.edit {
+    margin-top: 20px; }
+  .projects .thumbnail {
+    font-size: .7em;
+    text-align: center;
+    margin: 0 0 10px; }
+    .projects .thumbnail a {
+      text-decoration: none; }
+    .projects .thumbnail img {
+      max-width: 150px;
+      margin: 0;
+      border-radius: 3px; }
+    .projects .thumbnail h2 {
+      margin: 5px 0 0;
+      font-size: 1.3em;
+      color: #222; }
+    .projects .thumbnail:hover img {
+      box-shadow: 0 0 0 2.4px #ced900; }
+  .projects.edit {
+    display: block; }
+    .projects.edit .project {
+      display: flex;
+      align-items: center;
+      justify-items: flex-start;
+      flex-direction: row;
+      padding: 10px;
+      border-top: 1px solid #eee;
+      border-radius: 3px;
+      transition: background .2s ease; }
+      .projects.edit .project:hover {
+        background: #eee; }
+        .projects.edit .project:hover .buttons {
+          opacity: 1; }
+      .projects.edit .project img {
+        height: 50px;
+        margin-right: 10px; }
+      .projects.edit .project h2 {
+        display: inline-block;
+        margin: 0;
+        font-size: 1em; }
+      .projects.edit .project .buttons {
+        margin: 0 0 0 auto;
+        opacity: 0;
+        transition: opacity .2s ease; }
+      .projects.edit .project form {
+        display: inline-block;
+        margin: 0; }
+      .projects.edit .project a {
+        text-decoration: none; }
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  background: none;
+  border: 2px solid grey;
+  border-radius: 3px;
+  padding: 10px;
+  color: grey;
+  margin: 0;
+  transition: background .2s ease, color .2s ease; }
+  .button.delete {
+    cursor: pointer;
+    border: 2px solid red;
+    color: red; }
+    .button.delete:hover {
+      color: white;
+      background: red; }
+  .button.primary {
+    border: 2px solid #ced900;
+    color: #ced900; }
+    .button.primary:hover {
+      color: white;
+      background: #ced900; }
+  .button:hover {
+    color: white;
+    background: grey; }
+
+form {
+  max-width: 700px; }
+  form input, form textarea {
+    display: block;
+    width: 100%;
+    margin: 5px;
+    padding: 5px; }
+  form input[type="submit"] {
+    background: none;
+    border: 1px solid #ced900;
+    color: #ced900; }
+    form input[type="submit"]:hover {
+      background: #ced900;
+      color: white; }

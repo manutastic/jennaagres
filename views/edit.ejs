@@ -1,0 +1,13 @@
+<% include ./partials/header %>
+
+<h1>Edit Project</h1>
+<form action="/projects/<%= project.slug %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <input type="text" name="project[title]" value="<%= project.title %>">
+    <input type="file" name="thumb">
+    <textarea name="project[desc]"><%= project.desc %></textarea>
+    <input type="file" multiple name="images">
+    <input type="text" name="project[categories]" placeholder="Categories">
+    <input type="submit">
+</form>
+
+<% include ./partials/footer %>

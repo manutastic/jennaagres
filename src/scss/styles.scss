@@ -1,0 +1,181 @@
+$primary-color: #ced900;
+$danger-color: red;
+$text-dark-color: #222;
+$border-radius: 3px;
+
+*, *:before, *:after {
+    font-family: "Karla", "Myriad Pro", Myriad, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    padding: 0 10px;
+}
+.container{
+    max-width: 720px;
+    margin: 70px auto;
+    padding: 0;
+    &>img {
+        width: 100%;
+    }
+}
+header{
+    border-bottom: 2px solid $primary-color;
+    overflow: hidden;
+    padding: 25px 0;
+    margin-bottom: 40px;
+    h1 {
+        float: left;
+        margin: 0;
+        a {
+            font-size: .6em;
+            color: $primary-color;
+            text-decoration: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    }
+    nav {
+        float: right;
+        ul {
+            list-style: none;
+            margin: 0;
+            li {
+                display: inline-block;
+                margin: 0 5px;
+                font-size: .9em;
+                font-weight: bold;
+                a {
+                    text-decoration: none;
+                    color: $text-dark-color;
+                    &:visited {
+                        color: $text-dark-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.projects {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill,minmax(140px, 1fr));
+    max-width: 700px;
+    &.edit {
+        margin-top: 20px;
+    }
+    .thumbnail {
+        font-size: .7em;
+        text-align: center;
+        margin: 0 0 10px;
+        a {
+            text-decoration: none;
+        }
+        img {
+            max-width: 150px;
+            margin: 0;
+            border-radius: $border-radius;
+        }
+        h2 {
+            margin: 5px 0 0;
+            font-size: 1.3em;
+            color: $text-dark-color;
+        }
+        &:hover img {
+            box-shadow: 0 0 0 2.4px $primary-color;
+        }
+    }
+    &.edit {
+        display: block;
+        .project {
+            display: flex;
+            align-items: center;
+            justify-items: flex-start;
+            flex-direction: row;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            border-radius: $border-radius;
+            transition: background .2s ease;
+            &:hover {
+                background: #eee;
+                .buttons {
+                    opacity: 1;
+                }
+            }
+            img {
+                height: 50px;
+                margin-right: 10px;
+            }
+            h2 {
+                display: inline-block;
+                margin: 0;
+                font-size: 1em;
+            }
+            .buttons {
+                margin: 0 0 0 auto;
+                opacity: 0;
+                transition: opacity .2s ease;
+            }
+            form {
+                display: inline-block;
+                margin: 0;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: 2px solid grey;
+    border-radius: $border-radius;
+    padding: 10px;
+    color: grey;
+    margin: 0;
+    transition: background .2s ease, color .2s ease;
+    &.delete {
+        cursor: pointer;
+        border: 2px solid $danger-color;
+        color: $danger-color;
+        &:hover {
+            color: white;
+            background: $danger-color;
+        }
+    }
+    &.primary {
+        border: 2px solid $primary-color;
+        color: $primary-color;
+        &:hover {
+            color: white;
+            background: $primary-color;
+        }
+    }
+    &:hover {
+        color: white;
+        background: grey;
+    }
+}
+
+form {
+    max-width: 700px;
+    input, textarea {
+        display: block;
+        width: 100%;
+        margin: 5px;
+        padding: 5px;
+    }
+    input[type="submit"] {
+        background: none;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+        &:hover{
+            background: $primary-color;
+            color: white;
+        }
+    }    
+}

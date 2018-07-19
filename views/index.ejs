@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<div class="projects">
+    <% projects.forEach(function(project) { %>
+    <div class="thumbnail">
+        <a href="/projects/<%= project.slug %>">
+            <img src="<%= project.thumb %>"/>
+            <h2> <%= project.title %> </h2>
+        </a>
+    </div>
+    <% }) %>
+</div>
+
+<% include ./partials/footer %>

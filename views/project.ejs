@@ -1,0 +1,7 @@
+<% include ./partials/header %>
+<h2><%= project.title %></h2>
+<p><%= project.desc %></p>
+<% project.images.forEach(function(image) { %>
+    <img src="<%= image %>"/>
+<% }) %>
+<% include ./partials/footer %>

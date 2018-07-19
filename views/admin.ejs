@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+
+<a class="button primary" href="/projects/new">+ New Project</a>
+<div class="projects edit">
+    <% projects.forEach(function(project) { %>
+    <div class="project">
+        <img src="/<%= project.thumb %>"/>
+        <h2> <%= project.title %> </h2>
+        <div class="buttons">
+            <a class="button" href="/projects/<%= project.slug %>/edit">Edit</a>
+            <form action="/projects/<%= project.slug %>?_method=DELETE" method="POST">
+                <button class="delete button">Delete</button>
+            </form>
+        </div>
+    </div>
+    <% }) %>
+</div>
+
+<% include ./partials/footer %>
