@@ -95,7 +95,8 @@ header {
         display: inline-block;
         margin: 0; }
       .projects.edit .project a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: #222; }
 
 .button {
   display: inline-block;

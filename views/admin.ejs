@@ -4,12 +4,12 @@
 <div class="projects edit">
     <% projects.forEach(function(project) { %>
     <div class="project">
-        <img src="/<%= project.thumb %>"/>
-        <h2> <%= project.title %> </h2>
+        <img src="<%= project.thumb %>"/>
+        <h2><a href="/projects/<%= project.slug %>"><%= project.title %></a></h2>
         <div class="buttons">
             <a class="button" href="/projects/<%= project.slug %>/edit">Edit</a>
             <form action="/projects/<%= project.slug %>?_method=DELETE" method="POST">
-                <button class="delete button">Delete</button>
+                <button class="delete button" onclick="return confirm('Are you sure?')">Delete</button>
             </form>
         </div>
     </div>
